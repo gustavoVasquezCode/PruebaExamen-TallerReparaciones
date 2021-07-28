@@ -16,24 +16,24 @@ public class Descendiente extends Antepasado{
 
   public void calcularQuincenaHora(){
     validarPorcentaje();
-    setSueldoQuincenal(getNumeroDeHoras() * getPrecioPorHora());
-    setSueldoQuincenal(getSueldoQuincenal() + (getSueldoQuincenal() * getBono()));
+    setSueldoQuincenal(numeroDeHoras * precioPorHora);
+    setSueldoQuincenal(getSueldoQuincenal() + (getSueldoQuincenal() * bono));
   }
 
   public void calcularQuincenaTrabajo(){
     validarPorcentaje();
-    if(getNumeroDeDias() == 1){
+    if(numeroDeDias == 1){
       setPagoAdicional(100.0f);
     }
-    setSueldoQuincenal(getPrecioPorTrabajo());
-    setSueldoQuincenal(getPagoAdicional() + getSueldoQuincenal() + (getSueldoQuincenal() * getBono()));
+    setSueldoQuincenal(precioPorTrabajo);
+    setSueldoQuincenal(getPagoAdicional() + getSueldoQuincenal() + (getSueldoQuincenal() * bono));
   }
 
   private void validarPorcentaje(){
     if(getAntiguedad() > 10){
-      setBono(12.5f/100);
+      bono = 12.5f/100;
     } else{
-      setBono(4.7f/100);
+      bono = 4.7f/100;
     }
   }
 
